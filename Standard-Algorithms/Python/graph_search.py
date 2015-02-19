@@ -47,11 +47,31 @@ def dfs(graph, start):
         color[u] = 'B'
     return distance, parent
 
+# Path tracer
+
+def trace(distance, parents, start, end):
+    if distance[end] == 0:
+        return []
+    path = list()
+    path.append(end)
+    current = end
+    while current != start:
+        current = parents[current]
+        path.append(current)
+    return path
+    
 g = {'r' : set(['s', 'v']), 's' : set(['r', 'w']), 't' : set(['u', 'w', 'x']), 'u' : set(['x', 'y']), 'v' : set(['r']), 'w' : set(['s', 't', 'x']), 'x' : set(['w', 't', 'u', 'y']), 'y' : set(['u', 'x'])}
+h = {1 : set([2, 3]), 2 : set([4]), 3 : set([5]), 4 : set([]), 5 : set([])}
 print "Breadth First Search:"
 a, b  = bfs(g, 's')
 print a
 print b
+print
+
+a, b = bfs(h, 1)
+print a
+print b
+print list(reversed(trace(a, b, 1, 4)))
 print
 
 print "Depth First Search:"
