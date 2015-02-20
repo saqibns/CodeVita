@@ -1,0 +1,227 @@
+X------------------X------------------X------------------X------------------X------------------X------------------X
+Dynamic Programming (DP) appears to account for a plurality (some estimate up to a third) of contest problems. Of course, DP is also not a single algorithm that you can just learn once and retain, so maybe this doesn't answer your question.
+
+I suppose it also depends on whether you consider data structures in the same category as algorithms. There are certainly some data structures that you should be familiar with if you want to do well in programming competitions. The most important ones are range trees (variously known as interval trees or segment trees) and binary indexed trees (BITs), also known as Fenwick trees. Additionally, many DP algorithms make use of a prefix sum array.
+
+The most essential of the single algorithms I can think of are the following, in no particular order. However, you may be disappointed by how rarely some of these actually appear in contests. Most non-DP problems appear to be of the "ad hoc with data structures" variety, and you simply have to practice in order to get good at them.
+
+(To be clear, again, I list below only algorithms that take a single input set, compute some function of it, and carry no state between inputs. This distinguishes them from data structures, which by definition hold state, and categories of algorithms and algorithmic techniques like DP, which don't have some specific function they compute.)
+
+    Sieve of Eratosthenes, or another prime number sieve
+    Depth-first search
+    Breadth-first search
+    Dijkstra's algorithm
+    Floyd--Warshall algorithm
+    Either Kruskal's or Prim's algorithm
+    Some implementation of topological sorting, such as by using DFS
+    Convex hull (I recommend the Monotone Chains algorithm)
+    Coordinate compression
+    Edmonds--Karp, or another implementation of the Ford--Fulkerson method; or a preflow-push algorithm; or, if you are preparing an ACM codebook, Dinic's algorithm. (Note: Max flow is not allowed to appear on the IOI, but may nevertheless appear on national team-selection contests)
+
+X------------------X------------------X------------------X------------------X------------------X------------------X	
+	
+If you want specific algorithms, my top 10 would be
+
+    Dijkstra's - depending on the type of contest, you might see basic pathfinding problems, or you might see problems with non-obvious reductions to pathfinding problems. Whenever you have a cost minimization problem with a (reasonably small) finite number of states, an initial state a target state, you can look at it as a pathfinding problem.
+    Bellman-Ford is useful for pathfinding when edges may have negative costs. For example if you're navigating a maze with potions which boost health and hazards which lower it, Bellman-Ford would be a great approach.
+    Floyd-Warshall is useful for computing all paths. It is sometimes used in problems where you don't need all paths, because it's so easy to implement. It is slower than other pathfinding algorithms though, so whether Floyd-Warshall is an option depends on the graph size.
+    Edmonds-Karp for max flow/min cut problems. One common application is bipartite matching problems. For example, given N people, M food items, and a list of each person's food allergies, how many people can you feed?
+    The Hungarian algorithm for assignment problems. Similar to the above, but in these problems the edges have weights, and we're maximizing the total weight rather than just the number of matchings.
+    The sweep line "algorithm" (more of a general approach really) is useful for various geometric problems, like the nearest pair problem. Also useful for a variety of intersection-related problems, like finding intersecting line segments, or conflicting calendar events.
+    Graham scan or another convex hull algorithm, for problems such as building a minimal fence to enclose animals.
+    An algorithm for finding strongly connected components, such as Tarjan's.
+    Prim's algorithm for minimum spanning trees.
+    Knuth-Morris-Pratt algorithm for string searching.
+
+
+Other concepts worth studying, which aren't in the above list because they aren't specific algorithms:
+
+    Memoization/dynamic programming is quite useful. Some problems have obvious DP solutions, while others have very non-obvious ones which take practice to recognize.
+    Binary search is useful in many optimization problems, so make sure you're very comfortable implementing it.
+    Combinatorial game theory comes up now and then. I recommend Thomas Ferguson's introduction.
+    Tries are useful in a variety of text-related problems.
+	
+X------------------X------------------X------------------X------------------X------------------X------------------X	
+
+
+Here's a random selection, approximately ordered from most basic to more advanced. I may add more later...
+
+Edit: this is definitely not meant to be an exhaustive list, it's just a random selection of things I use a lot/think are cool.
+
+Numerical:
+
+    Euclid's algorithms
+    Gaussian elimination
+    Fourier-Motzkin elimination
+    Fast Fourier Transform
+
+Data structures:
+
+    Binary trees
+    Hash tables
+    Binary decision diagrams
+    Disjoint sets
+    Trie
+    Priority queue
+
+Sorting & searching arrays:
+
+    Bubblesort
+    Quicksort
+    Heapsort -- mostly useful because building a heap is a really handy way of making a priority queue
+    Binary search
+
+Tree search:
+
+    Breadth first search
+    Depth first search
+
+Graphs:
+
+    Dijkstra's algorithm
+    Prim's algorithm
+    Ford-Fulkerson
+    A*
+
+Automata and parsing:
+
+    Finite automata
+    Thompson's construction for creating a nondeterministic finite automaton from a regular expression
+    The powerset construction for determinising a finite automaton
+    Pushdown automata and context-free languages
+    Recursive descent parsing for LL(k) languages LR parsing for LR(k) languages
+
+Numerical optimization:
+
+    Simplex
+    Hill climbing algorithms
+    Newton's method
+
+Combinatorial optimization:
+
+    The Hungarian algorithm for solving the assignment problem
+    Boolean satisfiability -- an NP-complete problem
+    DPLL -- used to solve SAT
+    QBF -- a PSPACE complete problem
+
+Graphics:
+
+    Rasterisation
+    Ray tracing
+
+Compilers:
+
+    Hindley-Milner type inference
+    Register colouring
+
+Machine learning:
+
+    Back propagation for neural networks
+    Expectation maximization algorithm
+    Naive Bayes
+    Support vector machines
+    Random forests
+
+Cryptography:
+
+    Diffie-Hellman key exchange
+    DES
+    Block cipher modes of operation -- most important is CBC imho
+    RSA)
+
+Miscellaneous:
+
+    Graham scan for finding convex hulls
+    Quine-McCluskey algorithm for logic minimization
+
+X------------------X------------------X------------------X------------------X------------------X------------------X
+
+To solve most of the challenges knowing 10 algorithms wont count much. An exhaustive list would contain more than 50 algorithms.
+
+The most used data structures and algorithms are :
+Binary Search
+Quicksort
+Merge Sort
+Suffix Array
+Knuth-Morris-Pratt Algorithm (KMP)
+Rabin-Karp Algorithm
+Tries
+Depth First Traversal of a graph
+Breadth First Traversal of a graph
+Dijkstra's Algorithm
+Binary Indexed Tree
+Segment Tree (with lazy propagation)
+Persistent Segment Tree
+Z algorithm
+Floyd Warshall Algorithm
+Sparse Table(RMQ)
+Heap / Priority Queue / Heapsort
+Modular Multiplicative Inverse
+nCr % M
+Suffix Automaton
+Lowest Common Ancestor
+Counting Inversions
+Euclid's Extended Algorithm
+Suffix Tree
+Dynamic Programming
+Basic Data Structures
+Logarithmic Exponentiation
+Graphs
+Minimum Spanning Tree
+Efficient Prime Factorization
+Combinatorics
+Union Find/Disjoint Set
+Knapsack problem
+Aho-Corasick String Matching Algorithm
+Strongly Connected Components
+Bellman Ford algorithm
+Heavy-light Decomposition
+Convex Hull
+Jarvis Algorithm Implementation
+Line Intersection
+Sieve of Erastothenes
+Interval Tree
+Counting Sort
+Probabilities
+Matrix Exponentiation
+Network flow
+Max Flow(Ford-Fulkerson)
+K-d tree :
+Deque
+Binary Search Tree
+Quick Select
+Treap/Cartesian Tree
+Game Theory
+STL
+Maximum Bipartite Matching
+Manacher's Algorithm
+Miller-Rabin Primality Test
+Stable Marriage Problem
+Hungarian Algorithm
+Sweep line Algorithm
+LCP
+Gaussian Elimination
+Pollard Rho Integer Factorization
+Topological Sorting
+Detecting Cycles in a Graph : Directed , Undirected
+Geometry
+Backtracking
+Eulerian and Hamiltonian Paths
+Graph Coloring
+Meet in the Middle
+Arbitrary Precision Integer(BigInt)
+Radix Sort
+Bucket Sort
+Johnson's Algorithm
+Maximal Matching in a General Graph
+Recursion
+Inclusion and Exclusion Principle
+Coordinate Compression
+Sqrt-Decomposition
+Link-Cut Tree
+Euler's Totient Function
+Burnside Lemma
+Edit/Levenshtein Distance
+Branch and Bound
+Math for Competitive Programming
+Mo's Algorithm
