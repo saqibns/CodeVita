@@ -7,6 +7,9 @@ class MaxHeap:
     def __str__(self):
         return str(self.a)
 
+    def size(self):
+        return self.heap_size
+
     def parent(self, i):
         return i / 2
 
