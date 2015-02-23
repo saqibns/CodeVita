@@ -18,6 +18,31 @@ def input_directed_graph_1():
         graph[line[0]] = set(line[1:])
     return graph
 
+def input_directed_graph_1_1():
+    """
+    Input Format:
+        4
+        4
+        1 2 3
+        3 1 4
+        2 1
+        4 1 2 3
+
+        There are four nodes.
+        Four lines follow.
+        Node 1 is linked to nodes 2 and 3 and so forth
+    """
+    graph = dict()
+    nodes = int(raw_input())
+    for i in xrange(nodes):
+        graph[i + 1] = set()
+    #'k' lines follow
+    k = int(raw_input())
+    for i in xrange(k):
+        line = map(int, raw_input().split())
+        graph[line[0]].update(set(line[1:]))
+    return graph
+
 def input_directed_graph_2():
     """
     Input Format:
@@ -92,4 +117,6 @@ def input_undirected_graph_2():
         graph[line[1]].add(line[0])
     return graph
 
-print input_undirected_graph_2()
+#Tests
+#print input_undirected_graph_2()
+print input_directed_graph_1_1()
