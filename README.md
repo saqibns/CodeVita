@@ -1,3 +1,3 @@
 # CodeVita
 
-##Arsenal for CodeVita Grand Finale.
+## Arsenal for CodeVita Grand Finale.
